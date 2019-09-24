@@ -20,10 +20,13 @@ public class MainTest {
             next.execute();
         }
 
+
         Iterator<SpiService> iterator = load.iterator();
         while (iterator.hasNext()){
             SpiService next = iterator.next();
             next.execute();
         }
+
+
     }
 }

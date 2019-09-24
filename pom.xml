@@ -6,7 +6,30 @@
 
     <groupId>com.lhf</groupId>
     <artifactId>spi-test</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.3-SNAPSHOT</version>
 
+    <distributionManagement>
+        <repository>
+            <!-- 这里的ID要和setting的id一致 -->
+            <id>nexus-release</id>
+            <url>http://192.168.141.135:30003/repository/maven-releases/</url>
+        </repository>
+        <!--这是打成快照版本的配置 -->
+        <snapshotRepository>
+            <id>nexus-snapshot</id>
+            <url>http://192.168.141.135:30003/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <configuration>
+                    <skipTests>true</skipTests>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
